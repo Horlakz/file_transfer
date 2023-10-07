@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Listing</title>
+  </head>
+  <body>
+    <h1>File Listing</h1>
+    <ul>
+      {% for folder in directories['directories'] %}
+      <li><a href="/list/{{ folder }}">{{ folder }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

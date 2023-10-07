@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Directory Listing - {{ directory_path }}</title>
+</head>
+<body>
+    <h1>Directory Listing - {{ directory_path }}</h1>
+    <ul>
+        {% for file in directory_content['files'] %}
+            <li><a href="/download/{{ directory_path }}/{{ file }}" download>{{ file }}</a></li>
+        {% endfor %}
+        {% for subdirectory in directory_content['directories'] %}
+            <li>
+                <strong>{{ subdirectory['name'] }}</strong>
+                <ul>
+                    <li><a href="/list/{{ directory_path }}/{{ subdirectory['name'] }}">View Contents</a></li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+`

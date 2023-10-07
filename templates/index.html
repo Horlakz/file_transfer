@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Transfer</title>
+  </head>
+
+  <body>
+    <h1>File Transfer</h1>
+    <h2>Send a File</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required multiple />
+      <input type="submit" value="Upload File" />
+    </form>
+    <h2>Receive a File</h2>
+    <a href="/list">Go to files</a>
+  </body>
+</html>
