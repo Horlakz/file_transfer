@@ -44,6 +44,11 @@
             var progress = document.getElementById('progress');
             progress.style.width = percentComplete + '%';
             progress.textContent = Math.round(percentComplete) + '%';
+            if (percentComplete === 100) {
+                var files = formData.getAll('file');
+                var fileNames = files.map(file => file.name).join(', ');
+                progress.textContent = fileNames + ' upload successful';
+            }
           }
         });
 
